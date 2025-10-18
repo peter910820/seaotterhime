@@ -6,13 +6,14 @@ import (
 	"strconv"
 )
 
+var (
+	fortunateArr = [8]string{"大凶", "凶", "末吉", "小吉", "中吉", "大吉", "仙草吉", "你再抽一次( ºωº )"}
+)
+
 func fortunate() string {
-	fortune := [7]string{"大凶", "凶", "末吉", "小吉", "中吉", "大吉", "仙草吉"}
-	randomfortune := fortune[rand.Intn(6)]
-	return randomfortune
+	return fortunateArr[rand.Intn(6)]
 }
 
 func draw() string {
-	number := rand.Intn(11) + 1
-	return strconv.Itoa(number)
+	return strconv.Itoa(rand.Intn(11) + 1)
 }

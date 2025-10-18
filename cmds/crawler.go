@@ -39,11 +39,11 @@ func wnacgCheck(no string) (string, error) {
 			logrus.Info(fmt.Sprintf("指定本子(%s)確認成功", no))
 			retrunString = url
 		} else {
-			logrus.Errorf(fmt.Sprintf("找不到指定本子(%s)", no))
+			logrus.Errorf("找不到指定本子(%s)", no)
 			retrunString = fmt.Sprintf("找不到指定本子(%s)", no)
 		}
 	case http.StatusNotFound:
-		logrus.Errorf(fmt.Sprintf("找不到指定本子(%s)", no))
+		logrus.Errorf("找不到指定本子(%s)", no)
 		retrunString = fmt.Sprintf("找不到指定本子(%s)", no)
 	default:
 		logrus.Errorf("伺服器端錯誤,請聯繫管理員")
@@ -91,7 +91,7 @@ func bingSearch(queryText string) (string, error) {
 		}
 		logrus.Debug(retrunString)
 	default:
-		logrus.Errorf(fmt.Sprintf("伺服器端錯誤(%d)", resp.StatusCode))
+		logrus.Errorf("伺服器端錯誤(%d)", resp.StatusCode)
 		retrunString = fmt.Sprintf("伺服器端錯誤(%d)", resp.StatusCode)
 	}
 

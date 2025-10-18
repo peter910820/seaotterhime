@@ -71,7 +71,7 @@ func TextMessageEntryPoint(bot *messaging_api.MessagingApiAPI, e webhook.Message
 
 	if reNhentai.MatchString(message.Text) {
 		messages = append(messages, messaging_api.TextMessage{
-			Text: fmt.Sprintf("https://nhentai.net/g/" + message.Text[1:]),
+			Text: fmt.Sprint("https://nhentai.net/g/" + message.Text[1:]),
 		})
 	}
 
@@ -86,12 +86,12 @@ func TextMessageEntryPoint(bot *messaging_api.MessagingApiAPI, e webhook.Message
 		})
 	}
 
-	if strings.Contains(strings.ToLower(message.Text), "ciallo～(∠・ω< )") ||
-		strings.Contains(strings.ToLower(message.Text), "ciallo") ||
+	if strings.Contains(strings.ToLower(message.Text), "ciallo") ||
 		strings.Contains(strings.ToLower(message.Text), "(∠・ω< )") ||
+		strings.Contains(strings.ToLower(message.Text), "恰囉") ||
 		strings.Contains(strings.ToLower(message.Text), "洽囉") {
 		messages = append(messages, messaging_api.TextMessage{
-			Text: "Ciallo～(∠・ω< )",
+			Text: "Ciallo～(∠・ω< )⌒★",
 		})
 	}
 
