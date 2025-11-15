@@ -65,7 +65,7 @@ func TextMessageEntryPoint(bot *messaging_api.MessagingApiAPI, e webhook.Message
 
 	if strings.Contains(strings.ToLower(message.Text), "運勢") || strings.ContainsAny(strings.ToLower(message.Text), "運勢") {
 		messages = append(messages, messaging_api.TextMessage{
-			Text: fmt.Sprintf("💫您今天的運勢: %s💫", fortunate()),
+			Text: fmt.Sprintf("💫您今天的運勢: %s", fortunate()),
 		})
 	}
 
